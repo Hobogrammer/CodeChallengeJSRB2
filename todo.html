@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang=en>
+  <head>
+    <title>Ruby/JS Code Challenge #2</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    </head>
+    <body>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      $("#taskSub").click(function() { 
+        $('ol').append('<li id=' + $('#theTask').val() + '>' + $('#theTask').val() + '</li>');
+        $('#todo_input')[0].reset();
+        return false;
+      });
+
+      $("body").on("click","li", function(event) {
+        delTask = event.target.id;
+        $('#'+delTask).remove();
+      });
+    });
+    </script>
+      <div id="container">
+        <h2> TODOs</h2>
+        <form id="todo_input" action="todo.html" method="POST">
+          Task: <input type="text" name="theTask" id="theTask">
+          <input type="submit" value="Submit" id="taskSub">
+        </form>
+          <div id="todo">
+            <ol>
+            </ol>
+          </div>
+          <script type="text/javascript" charset="utf-8">
+      
+          </script>
+        </div>
+    </body>
+</html>
